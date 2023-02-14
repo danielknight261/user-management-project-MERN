@@ -1,7 +1,7 @@
 GET http://localhost:5000/users
 
 ###
-GET http://localhost:5000/users/63eb6b4525081ac7ef1a84de
+GET http://localhost:5000/users/63ebaab543d11c98032fbd5f
 
 
 
@@ -10,20 +10,21 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "jJacko Jj",
-    "email": "Jacko@gmail.com",
-    "gender": "Femals"
+  "name": "Jacko Jj",
+  "email": "Jacko@gmail.com",
+  "age": 41,
+  "status": "active"
 }
 
-
 ###
-PATCH http://localhost:5000/users/63eb6b4525081ac7ef1a84de
+PATCH http://localhost:5000/users/63eb6af925081ac7ef1a84d9
 Content-Type: application/json
 
 {
    "name": "Jacko Jj",
     "email": "Jacko@gmail.com",
-    "gender": "Female"
+    "age": 21,
+    "status": "active"
 }
 
 

@@ -4,17 +4,18 @@ import cors from "cors";
 import UserRoute from "./routes/UserRoute.js";
 
 const app = express();
-mongoose.connect('mongodb://localhost:27017/fullstack_db',{
+mongoose.connect('mongodb://localhost:27017/assetinsightproject',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
+
 const db = mongoose.connection;
 db.on('error', (error) => console.log(error));
-db.once('open', () => console.log('Database Connected.....'));
+db.once('open', () => console.log('Connected to database ...'));
 
 app.use(cors());
 app.use(express.json());
 app.use(UserRoute);
 
-app.listen(5000, () => console.log("Server is up and running...."))
+app.listen(5000, () => console.log("Server running..."))
