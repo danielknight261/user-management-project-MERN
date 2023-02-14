@@ -1,0 +1,27 @@
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/users/63eb6b4525081ac7ef1a84de
+
+
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "jJacko Jj",
+    "email": "Jacko@gmail.com",
+    "gender": "Femals"
+}
+
+
+###
+PATCH http://localhost:5000/users/63eb6b4525081ac7ef1a84de
+Content-Type: application/json
+
+{
+   "name": "Jacko Jj",
+    "email": "Jacko@gmail.com",
+    "gender": "Female"
+}
