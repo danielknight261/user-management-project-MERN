@@ -25,3 +25,14 @@ Content-Type: application/json
     "email": "Jacko@gmail.com",
     "gender": "Female"
 }
+
+
+###
+Delete http://localhost:5000/users/63eb6b0625081ac7ef1a84db
+Content-Type: application/json
+
+{
+   "name": "D Knight",
+    "email": "knight@gmail.com",
+    "gender": "Me"
+}
