@@ -1,45 +1,40 @@
-
 # Project Title
-User Management Project MERN
 
+MERN User Management Project
 
-The Stack used to create this project were Backend - Mongoose, MongoDB , Node, Express and Cors and the Front React and Axios  with a little bit of vanilla CSS. The MongoDB database is using a global IP address and there is no .env file so the project should run for anyone if the steps below are followed. 
-
+This project was developed using the MERN stack. The backend was created using Mongoose, MongoDB, Node, Express, and Cors, while the frontend was developed using React, Axios, and a little bit of vanilla CSS. The MongoDB database uses a global IP address and does not require an .env file, so the project can be run by anyone by following the steps below.
 
 ## Deployment
 
-To deploy this project please follow these steps
+To deploy this project, please follow these steps:
 
-```Backend
+Backend
 Open a terminal
 
-Step 1 - cd backend
-Step 2 - nodemon index
-Step 3 - terminal will read "server running"
-```
+Step 1 - Navigate to the backend directory: cd backend
+Step 2 - Run the command: nodemon index
+Step 3 - The terminal should read "server running".
 
-```Frontend
+Frontend
 Open another terminal
 
-Step 1 - cd Frontend
-Step 2 - npm start
-Step 3 - localhost:3000 should load and automatically work with server in the back end. 
+Step 1 - Navigate to the frontend directory: cd frontend
+Step 2 - Run the command: npm start
+Step 3 - The website should load on localhost:3000 and automatically work with the backend server.
 
 Happy Playing!
 
-
 ## Support
 
-For support, email danielknight261@gmail.com
-
+For support, please email danielknight261@gmail.com.
 
 ## Stretch Goals
 
-Really fun little project to build, some small stretch goals
+This was a really fun project to build, and there are some small stretch goals that could be implemented:
 
-- More professional styling
-- Some simple testing
-- Search feature so you can key word search name in the data base and have it return the matches
-- Age range limitation so min 18 , max 100 when inputting new user.
-- Only allows to input email if it has an @ in .
-- Get the project hosted
+Improve the styling to make it more professional
+Add some simple testing
+Implement a search feature that allows users to search the database by name
+Implement age range limitation when inputting new users (minimum 18, maximum 100)
+Only allow email input if it contains an "@" symbol
+Get the project hosted
