@@ -1,40 +1,41 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";  // Importing React and useState from the react library
+import axios from "axios";  // Importing axios library for HTTP requests
+import { useNavigate } from "react-router-dom"; // Importing useNavigate from the react-router-dom library
 
 const AddUser = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [age, setAge] = useState("");
-  const [status, setStatus] = useState("Active");
-  const navigate = useNavigate();
+  const [name, setName] = useState("");   // Setting up the state for user name
+  const [email, setEmail] = useState(""); // Setting up the state for user email
+  const [age, setAge] = useState("");     // Setting up the state for user age
+  const [status, setStatus] = useState("Active"); // Setting up the state for user status and setting the default value to "Active"
+  const navigate = useNavigate();          // Using useNavigate hook from react-router-dom library to navigate to different routes
 
-  const saveUser = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post("http://localhost:5000/users", {
+  const saveUser = async (e) => {   // Define an asynchronous function to handle the form submission
+    e.preventDefault();            // Prevent the default form submission behavior
+    try {                          // Use try-catch block to catch any errors while sending HTTP request
+      await axios.post("http://localhost:5000/users", {  // Send a POST request to the server API with the user data
         name,
         email,
         age,
         status,
       });
-      navigate("/");
+      navigate("/");  // After successful user creation, navigate back to the home page
     } catch (error) {
-      console.log(error);
+      console.log(error); // Log any errors while creating the user
     }
   };
 
   return (
-    <div>
+    <div className="container">
       <div>
         <form onSubmit={saveUser}>
           <div>
             <label>Name</label>
             <div>
               <input
+              className="input"
                 type="text"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}  // Update the name state when the input value changes
                 placeholder="Name"
               />
             </div>
@@ -43,9 +44,10 @@ const AddUser = () => {
             <label>Email</label>
             <div>
               <input
+              className="input"
                 type="text"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)} // Update the email state when the input value changes
                 placeholder="Email"
               />
             </div>
@@ -54,9 +56,10 @@ const AddUser = () => {
             <label>Age</label>
             <div>
               <input
+              className="input"
                 type="text"
                 value={age}
-                onChange={(e) => setAge(e.target.value)}
+                onChange={(e) => setAge(e.target.value)}   // Update the age state when the input value changes
                 placeholder="Age"
               />
             </div>
@@ -66,7 +69,8 @@ const AddUser = () => {
             <div>
               <select
                 value={status}
-                onChange={(e) => setStatus(e.target.value)}
+                onChange={(e) => setStatus(e.target.value)} 
+                 // Update the status state when the select value changes
               >
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
@@ -74,7 +78,7 @@ const AddUser = () => {
             </div>
           </div>
           <div>
-            <button type="submit">Save</button>
+            <button type="submit" className="button">Save</button>
           </div>
         </form>
       </div>
@@ -82,4 +86,4 @@ const AddUser = () => {
   );
 };
 
-export default AddUser;
+export default AddUser;  // Export the AddUser component

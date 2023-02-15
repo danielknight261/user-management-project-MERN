@@ -3,13 +3,16 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const UserList = () => {
+  // Set up state for users and loading
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Fetch users from server when component mounts
   useEffect(() => {
     getUsers();
   }, []);
 
+  // Function to fetch all users from the server
   const getUsers = async () => {
     setLoading(true);
     try {
@@ -22,23 +25,25 @@ const UserList = () => {
     }
   };
 
+  // Function to delete a user by ID
   const deleteUser = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/users/${id}`);
-      getUsers ();
-    } catch (error)
- {
-  console.log(error)
- }
+      // Fetch updated list of users after delete operation
+      getUsers();
+    } catch (error) {
+      console.log(error);
     }
-   
+  };
 
   return (
-    <div className="columns">
-      <div className="columnTwo">
+    <div className="container">
+      <div>
+        {/* Link to add a new user */}
         <Link to="add" className="button">
           Add New
         </Link>
+        {/* Table to display list of users */}
         <table className="table">
           <thead>
             <tr>
@@ -51,6 +56,7 @@ const UserList = () => {
             </tr>
           </thead>
           <tbody>
+            {/* Map over the list of users and display them in a table */}
             {users.map((user, index) => (
               <tr key={user._id}>
                 <td>{index + 1}</td>
@@ -59,12 +65,11 @@ const UserList = () => {
                 <td>{user.age}</td>
                 <td>{user.status}</td>
                 <td>
-                  <Link
-                    to={`edit/${user._id}`}
-                    className="button"
-                  >
+                  {/* Link to edit a user */}
+                  <Link to={`edit/${user._id}`} className="button">
                     Edit
                   </Link>
+                  {/* Button to delete a user */}
                   <button
                     onClick={() => deleteUser(user._id)}
                     className="buttonRed"

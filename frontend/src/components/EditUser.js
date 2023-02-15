@@ -1,27 +1,36 @@
+// Import necessary libraries
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
+// Define the EditUser component
 const EditUser = () => {
+  // Define state variables using the useState hook
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [status, setStatus] = useState("");
+
+  // Access the navigate and id variables from the react-router-dom library
   const navigate = useNavigate();
   const { id } = useParams();
 
+  // Fetch user data by id on component mount using the useEffect hook
   useEffect(() => {
     getUserById();
   }, []);
 
-  const getUserById = async (e) => {
+  // Define an async function to fetch user data by id
+  const getUserById = async () => {
     const response = await axios.get(`http://localhost:5000/users/${id}`);
+    // Update the state variables with the retrieved data
     setName(response.data.name);
     setEmail(response.data.email);
-    setAge(response.data.age)
+    setAge(response.data.age);
     setStatus(response.data.status);
   };
 
+  // Define an async function to update user data on form submission
   const updateUser = async (e) => {
     e.preventDefault();
     try {
@@ -31,19 +40,21 @@ const EditUser = () => {
         age,
         status,
       });
+      // Navigate to the home page after the update is successful
       navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
 
+  // Return the JSX for the EditUser component
   return (
-    <div className="columns">
-      <div className="columnTwo">
+    <div className="container">
+      <div>
         <form onSubmit={updateUser}>
           <div className="field">
-            <label className="label">Name</label>
-            <div className="control">
+            <label>Name</label>
+            <div>
               <input
                 type="text"
                 className="input"
@@ -53,9 +64,9 @@ const EditUser = () => {
               />
             </div>
           </div>
-          <div className="field">
-            <label className="label">Email</label>
-            <div className="control">
+          <div>
+            <label>Email</label>
+            <div>
               <input
                 type="text"
                 className="input"
@@ -65,8 +76,8 @@ const EditUser = () => {
               />
             </div>
           </div>
-          <div className="field">
-            <label className="label">Age</label>
+          <div>
+            <label>Age</label>
             <div className="control">
               <input
                 type="text"
@@ -77,10 +88,10 @@ const EditUser = () => {
               />
             </div>
           </div>
-          <div className="field">
-            <label className="label">Status</label>
-            <div className="control">
-              <div className="select is-fullwidth">
+          <div>
+            <label>Status</label>
+            <div>
+              <div>
                 <select
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
@@ -91,8 +102,8 @@ const EditUser = () => {
               </div>
             </div>
           </div>
-          <div className="field">
-            <div className="control">
+          <div>
+            <div>
               <button type="submit" className="button">
                 Update
               </button>
@@ -104,4 +115,5 @@ const EditUser = () => {
   );
 };
 
+// Export the EditUser component as the default export
 export default EditUser;

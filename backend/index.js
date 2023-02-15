@@ -1,21 +1,21 @@
-import express from "express";
-import mongoose from "mongoose";
-import cors from "cors";
-import UserRoute from "./routes/UserRoute.js";
+import express from "express";   // Importing Express library
+import mongoose from "mongoose"; // Importing Mongoose library
+import cors from "cors";         // Importing Cors library
+import UserRoute from "./routes/UserRoute.js"; // Importing UserRoute
 
-const app = express();
-mongoose.connect('mongodb://localhost:27017/assetinsightproject',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+const app = express(); // Creating an instance of the Express application
+
+mongoose.connect('mongodb://localhost:27017/assetinsightproject',{ // Connecting to the MongoDB database
+    useNewUrlParser: true,     // Set the useNewUrlParser flag to true
+    useUnifiedTopology: true   // Set the useUnifiedTopology flag to true
 });
 
+const db = mongoose.connection; // Getting the default connection of Mongoose
+db.on('error', (error) => console.log(error)); // Log error if any while connecting to the database
+db.once('open', () => console.log('Connected to database ...')); // Log successful connection to the database
 
-const db = mongoose.connection;
-db.on('error', (error) => console.log(error));
-db.once('open', () => console.log('Connected to database ...'));
+app.use(cors());         // Using Cors middleware to allow cross-origin resource sharing
+app.use(express.json()); // Using the express.json() middleware to parse incoming JSON data
+app.use(UserRoute);      // Mounting the UserRoute on the app
 
-app.use(cors());
-app.use(express.json());
-app.use(UserRoute);
-
-app.listen(5000, () => console.log("Server running..."))
+app.listen(5000, () => console.log("Server running...")); // Starting the server on port 5000 and logging a message to the console when the server starts
