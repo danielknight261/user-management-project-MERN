@@ -46,8 +46,8 @@ const UserList = () => {
         {/* Table to display list of users */}
         <table className="table">
           <thead>
-            <tr>
-              <th>No</th>
+            <tr className="border-container">
+              <th>User</th>
               <th>Name</th>
               <th>Email</th>
               <th>Age</th>

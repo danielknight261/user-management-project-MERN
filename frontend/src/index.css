@@ -31,7 +31,7 @@
 }
 
 table {
-  width: 100%;
+  width: 80%;
   border: 1px solid;
 }
 
@@ -39,6 +39,8 @@ input {
   width: 40%;
 }
 
-container {
-  
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
 }
