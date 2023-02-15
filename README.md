@@ -12,7 +12,7 @@ Backend
 Open a terminal
 
 Step 1 - Navigate to the backend directory: cd backend
-Step 2 - Run the command: nodemon index
+Step 2 - Run the command: node index
 Step 3 - The terminal should read "server running".
 
 Frontend
