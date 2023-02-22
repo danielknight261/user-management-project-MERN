@@ -8,14 +8,18 @@ This project was developed using the MERN stack. The backend was created using M
 
 To deploy this project, please follow these steps:
 
-Backend
-Open a terminal
+1. Dependencies
+Open Terminal
+
+To install dependencies: npm i
+
+2. Backend
 
 Step 1 - Navigate to the backend directory: cd backend
 Step 2 - Run the command: node index
 Step 3 - The terminal should read "server running".
 
-Frontend
+3. Frontend
 Open another terminal
 
 Step 1 - Navigate to the frontend directory: cd frontend
@@ -32,9 +36,9 @@ For support, please email danielknight261@gmail.com.
 
 This was a really fun project to build, and there are some small stretch goals that could be implemented:
 
-Improve the styling to make it more professional
-Add some simple testing
-Implement a search feature that allows users to search the database by name
-Implement age range limitation when inputting new users (minimum 18, maximum 100)
-Only allow email input if it contains an "@" symbol
-Get the project hosted
+- Improve the styling to make it more professional
+- Add some simple testing
+- Implement a search feature that allows users to search the database by name 
+- Implement age range limitation when inputting new users (minimum 18, maximum 100) (Schema Validation using Mongo)
+- Only allow email input if it contains an "@" symbol (Schema Validation using Mongo)
+- Get the project hosted
