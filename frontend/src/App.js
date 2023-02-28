@@ -7,10 +7,10 @@ import EditUser from "./components/EditUser";
 function App() {
   return (
     // set up the router using BrowserRouter and define the route hierarchy
-    <BrowserRouter>
+    <BrowserRouter> 
       <div className="container">
         <Routes>
-          {/* Define the route for UserList component */}
+          {/* Define the route for UserList component / representing homepage*/}
           <Route path="/" element={<UserList/>}/>
           {/* Define the route for AddUser component */}
           <Route path="add" element={<AddUser/>}/>

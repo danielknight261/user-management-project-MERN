@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";  // 
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -7,8 +7,9 @@ const UserList = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Fetch users from server when component mounts
-  useEffect(() => {
+  // Fetch users from server when component mounts 
+  // useEffect fires a function when component is rendered, we pass empty array so it only renders once
+  useEffect(() => {   // used to perform side effects in function components, used to perform side effects in function components
     getUsers();
   }, []);
 

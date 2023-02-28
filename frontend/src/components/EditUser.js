@@ -16,7 +16,7 @@ const EditUser = () => {
   const { id } = useParams();
 
   // Fetch user data by id on component mount using the useEffect hook
-  useEffect(() => {
+  useEffect(() => {   // used to perform side effects in function components, used to perform side effects in function components
     getUserById();
   }, []);
 
