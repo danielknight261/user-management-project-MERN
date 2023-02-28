@@ -1,6 +1,6 @@
 import mongoose from "mongoose";  // Importing Mongoose library
 
-const User = mongoose.Schema({  // Creating a Mongoose schema for User collection
+const User = mongoose.Schema({  // Creating a Mongoose schema for User collection , Schema in future which is standard naming convention
   name: {                       // Name property of User collection
     type: String,              // Type is String
     required: true             // Name is a required field

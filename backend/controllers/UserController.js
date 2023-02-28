@@ -1,6 +1,6 @@
 import  User  from "../models/UserModel.js";
 
-// Get all users
+// GET all users function
 export const getUsers = async (req, res) => {
     try {
       // Retrieve all users from the database
@@ -14,11 +14,11 @@ export const getUsers = async (req, res) => {
     }
   };
 
-// Get user by ID
+// GET user by ID function
 export const getUserById = async (req, res) => {
     try {
       // Retrieve user from the database by ID
-      const requestedUser = await User.findById(req.params.id);
+      const requestedUser = await User.findById(req.params.id);  //findById mongodb function
       // If the user is not found, return a 404 status code with an error message
       if (!requestedUser) {
         return res.status(404).json({ error: 'User not found' });
@@ -32,7 +32,7 @@ export const getUserById = async (req, res) => {
     }
   };
 
-// Save a new user
+// Save a new user POST Request Function
 export const saveUser = async (req, res) => {
     // Create a new user object from the request body
     const newUser = new User(req.body);
@@ -52,7 +52,7 @@ export const saveUser = async (req, res) => {
     }
   };
 
-// Update a user by ID
+// Update a user by ID PATCH function
 export const updateUser = async (req, res) => {
     try {
       // Update the user in the database with the given ID and request body
@@ -70,7 +70,7 @@ export const updateUser = async (req, res) => {
     }
   };
 
-// Delete a user by ID
+// DELETE  a user by ID function
 export const deleteUser = async (req, res) => {
     try {
         // Delete the user in the database with the given ID
