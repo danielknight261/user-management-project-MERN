@@ -46,7 +46,7 @@ const AddUser = () => {
               <input
               className="input"
                 type="text"
-                value={email}
+                value={email}  // set to value state so if changes its reflected in the input
                 onChange={(e) => setEmail(e.target.value)} // Update the email state when the input value changes
                 placeholder="Email"
               />
@@ -58,7 +58,7 @@ const AddUser = () => {
               <input
               className="input"
                 type="number" // defining the input
-                value={age}
+                value={age}   // set to value state so if changes its reflected in the input
                 onChange={(e) => setAge(e.target.value)}   // Update the age state when the input value changes
                 placeholder="Age"
               />
@@ -69,7 +69,7 @@ const AddUser = () => {
             <div>
               <select
                 value={status}
-                onChange={(e) => setStatus(e.target.value)} 
+                onChange={(e) => setStatus(e.target.value)}   // set to value state so if changes its reflected in the input
                  // Update the status state when the select value changes
               >
                 <option value="Active">Active</option>
