@@ -9,20 +9,20 @@ const UserList = () => {
 
   // Fetch users from server when component mounts 
   // useEffect fires a function when component is rendered, we pass empty array so it only renders once
-  useEffect(() => {   // used to perform side effects in function components, used to perform side effects in function components
+  useEffect(() => {   // In this case Getting USERS from backend mongodb database 
     getUsers();
   }, []);
 
-  // Function to fetch all users from the server
+  // asynchronous function getUsers that fetches data from a server and updates the state of the component with the fetched data.
   const getUsers = async () => {
-    setLoading(true);
+    setLoading(true);    // setLoading(true) sets the component's loading state to true,
     try {
       const response = await axios.get("http://localhost:5000/users");
       setUsers(response.data);
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      setLoading(false);   // finally block sets the loading state back to false, which will allow the component to render normally.
     }
   };
 
@@ -58,9 +58,9 @@ const UserList = () => {
           </thead>
           <tbody>
             {/* Map over the list of users and display them in a table */}
-            {users.map((user, index) => (
-              <tr key={user._id}>
-                <td>{index + 1}</td>
+            {users.map((user, index) => ( // Map method is being used to map through array of users
+              <tr key={user._id}>  {/* In this case, the key prop is being set to the id property of the user object. This assumes that each user object has a unique _id value */} 
+                <td>{index + 1}</td> 
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.age}</td>

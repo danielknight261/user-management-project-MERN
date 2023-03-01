@@ -11,8 +11,8 @@ mongoose
   .connect(
     "mongodb+srv://admin:admin@cluster0.stzluip.mongodb.net/?retryWrites=true&w=majority",
     {
-      useNewUrlParser: true, // Set the useNewUrlParser flag to true
-      useUnifiedTopology: true, // Set the useUnifiedTopology flag to true
+      useNewUrlParser: true, // flag tells the MongoDB client driver to use a new URL parser when connecting to the database
+      useUnifiedTopology: true, //flag enables the use of the MongoDB driver's new unified topology engine
     }
   )
   .then(() => console.log("Connected to db & listening on port 5000"))

@@ -58,8 +58,8 @@ const EditUser = () => {
               <input
                 type="text"
                 className="input"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={name}  // set to value state so if changes its reflected in the input
+                onChange={(e) => setName(e.target.value)}  //The arrow function takes an event object e as its argument and calls the setName function, passing in the value property of the e.target object as its argument.
                 placeholder="Name"
               />
             </div>
@@ -70,8 +70,8 @@ const EditUser = () => {
               <input
                 type="text"
                 className="input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={email} // set to value state so if changes its reflected in the input
+                onChange={(e) => setEmail(e.target.value)}  //The arrow function takes an event object e as its argument and calls the setEmail function, passing in the value property of the e.target object as its argument.
                 placeholder="Email"
               />
             </div>
@@ -81,9 +81,9 @@ const EditUser = () => {
             <div className="control">
               <input
                 type="text"
-                className="input"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
+                className="input"  
+                value={age} // set to value state so if changes its reflected in the input
+                onChange={(e) => setAge(e.target.value)} // The arrow function takes an event object e as its argument and calls the setAge function, passing in the value property of the e.target object as its argument.
                 placeholder="Age"
               />
             </div>
