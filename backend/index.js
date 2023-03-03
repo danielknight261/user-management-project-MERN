@@ -5,6 +5,11 @@ import UserRoute from "./routes/UserRoute.js"; // Importing UserRoute
 
 const app = express(); // Creating an instance of the Express application
 
+// Create GET request
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
 // Connecting to the MongoDB database  "connect method()"
 //Future ref  mongoose.connect(process.env.MONGO_UI)
 mongoose
