@@ -65,10 +65,10 @@ const EditUser = () => {
             </div>
           </div>
           <div>
-            <label>Email</label>
+            <label for="email">Email</label>
             <div>
               <input
-                type="text"
+                type="email"
                 className="input"
                 value={email} // set to value state so if changes its reflected in the input
                 onChange={(e) => setEmail(e.target.value)}  //The arrow function takes an event object e as its argument and calls the setEmail function, passing in the value property of the e.target object as its argument.
