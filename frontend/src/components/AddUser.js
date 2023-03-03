@@ -45,7 +45,7 @@ const AddUser = () => {
             <div>
               <input
               className="input"
-                type="text"
+                type="email"
                 value={email}  // set to value state so if changes its reflected in the input
                 onChange={(e) => setEmail(e.target.value)} // Update the email state when the input value changes
                 placeholder="Email"
@@ -58,9 +58,10 @@ const AddUser = () => {
               <input
               className="input"
                 type="number" // defining the input
+                min="1" max="120"
                 value={age}   // set to value state so if changes its reflected in the input
                 onChange={(e) => setAge(e.target.value)}   // Update the age state when the input value changes
-                placeholder="Age"
+                placeholder="Age 1-120"
               />
             </div>
           </div>

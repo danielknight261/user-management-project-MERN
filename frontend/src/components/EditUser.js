@@ -80,8 +80,9 @@ const EditUser = () => {
             <label>Age</label>
             <div className="control">
               <input
-                type="text"
+                type="number"
                 className="input"  
+                min="1" max="120"
                 value={age} // set to value state so if changes its reflected in the input
                 onChange={(e) => setAge(e.target.value)} // The arrow function takes an event object e as its argument and calls the setAge function, passing in the value property of the e.target object as its argument.
                 placeholder="Age"
