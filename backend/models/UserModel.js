@@ -7,12 +7,7 @@ const User = mongoose.Schema({  // Creating a Mongoose schema for User collectio
   },
   email: {                      // Email property of User collection
       type: String,
-      trim: true,
-      lowercase: true,
-      unique: true,
-      required: 'Email address is required',
-      validate: [validateEmail, 'Please fill a valid email address'],
-      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']            // Email is a required field
+      required: true
   },
   age: {                        // Age property of User collection
     type: Number,              // Type is Number
