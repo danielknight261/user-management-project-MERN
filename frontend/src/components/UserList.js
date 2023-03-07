@@ -37,6 +37,23 @@ const UserList = () => {
     }
   };
 
+//   another way 
+//   // Function to fetch users from server and optionally delete a user by ID
+// const fetchUsers = async (idToDelete) => {
+//   setLoading(true);    // setLoading(true) sets the component's loading state to true,
+//   try {
+//     if (idToDelete) {
+//       await axios.delete(`http://localhost:5000/users/${idToDelete}`);
+//     }
+//     const response = await axios.get("http://localhost:5000/users");
+//     setUsers(response.data);
+//   } catch (error) {
+//     console.error(error);
+//   } finally {
+//     setLoading(false);   // finally block sets the loading state back to false, which will allow the component to render normally.
+//   }
+// };
+
   return (
     <div className="container">
       <div>
