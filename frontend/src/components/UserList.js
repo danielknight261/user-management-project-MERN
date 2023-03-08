@@ -29,47 +29,50 @@ const UserList = () => {
   };
 
   return (
-    <div className="container">
-      <div>
-        <Link to="add" className="button">
-          Add New
-        </Link>
-        <table className="table">
-          <thead>
-            <tr className="border-container">
-              <th>User</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Age</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user, index) => (
-              <tr key={user._id}>
-                <td>{index + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.age}</td>
-                <td>{user.status}</td>
-                <td>
-                  <Link to={`edit/${user._id}`} className="button">
-                    Edit
-                  </Link>
-                  <button
-                    onClick={() => getUsers(user._id)}
-                    className="buttonRed"
-                  >
-                    Delete
-                  </button>
-                </td>
+    <>
+      <header className="header">MERN User Management Project</header>
+      <div className="container">
+        <div>
+          <Link to="add" className="button">
+            Add New
+          </Link>
+          <table className="table">
+            <thead>
+              <tr className="border-container">
+                <th>User</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Status</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {users.map((user, index) => (
+                <tr key={user._id}>
+                  <td>{index + 1}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.age}</td>
+                  <td>{user.status}</td>
+                  <td>
+                    <Link to={`edit/${user._id}`} className="button">
+                      Edit
+                    </Link>
+                    <button
+                      onClick={() => getUsers(user._id)}
+                      className="buttonRed"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
