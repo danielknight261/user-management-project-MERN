@@ -27,6 +27,7 @@ header {
 .table {
   border-collapse: collapse;
   width: 100%;
+  
 }
 
 .table th,
@@ -53,6 +54,7 @@ header {
   font-size: 16px;
   margin-right: 5px;
   cursor: pointer;
+  border-radius: 8px
 }
 
 .button:hover,
@@ -62,10 +64,12 @@ header {
 
 .buttonRed {
   background-color: #f44336;
+  border-radius: 8px
 }
 
 .border-container {
   border: 1px solid #ddd;
+  border-radius: 8px
 }
 
 .input {
@@ -74,4 +78,5 @@ header {
   padding: 10px; /* Adds padding */
   width: 100%; /* Sets the width to 100% */
   box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  border-radius: 8px
 }
