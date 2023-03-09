@@ -12,7 +12,7 @@ const AddUser = () => {
   const saveUser = async (e) => {   // Define an asynchronous function to handle the form submission
     e.preventDefault();            // Prevent the default form submission behavior
     try {                          // Use try-catch block to catch any errors while sending HTTP request
-      await axios.post("http://localhost:5000/users", {  // Send a POST request to the server API with the user data
+      await axios.post("https://mern---backend.herokuapp.com/users", {  // Send a POST request to the server API with the user data
         name,
         email,
         age,

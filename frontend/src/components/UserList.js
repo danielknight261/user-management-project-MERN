@@ -15,10 +15,10 @@ const UserList = () => {
     try {
       let response;
       if (idToDelete) {
-        await axios.delete(`http://localhost:5000/users/${idToDelete}`);
+        await axios.delete(`https://mern---backend.herokuapp.com/${idToDelete}`);
         setUsers(users.filter((user) => user._id !== idToDelete));
       } else {
-        response = await axios.get("http://localhost:5000/users");
+        response = await axios.get("https://mern---backend.herokuapp.com/users");
         setUsers(response.data);
       }
     } catch (error) {

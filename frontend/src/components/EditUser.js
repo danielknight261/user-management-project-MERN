@@ -22,7 +22,7 @@ const EditUser = () => {
 
   // Define an async function to fetch user data by id
   const getUserById = async () => {
-    const response = await axios.get(`http://localhost:5000/users/${id}`);
+    const response = await axios.get(`https://mern---backend.herokuapp.com/users/${id}`);
     // Update the state variables with the retrieved data
     setName(response.data.name);
     setEmail(response.data.email);
@@ -34,7 +34,7 @@ const EditUser = () => {
   const updateUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${id}`, {
+      await axios.patch(`https://mern---backend.herokuapp.com/users/${id}`, {
         name,
         email,
         age,

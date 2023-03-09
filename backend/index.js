@@ -2,12 +2,13 @@ import express from "express"; // Importing Express library
 import mongoose from "mongoose"; // Importing Mongoose library
 import cors from "cors"; // Importing Cors library
 import UserRoute from "./routes/UserRoute.js"; // Importing UserRoute
+import {} from 'dotenv/config'
 
 const app = express(); // Creating an instance of the Express application
 
 // Create GET request
 app.get("/", (req, res) => {
-  res.send("Express on Vercel");
+  res.send("API");
 });
 
 // Connecting to the MongoDB database  "connect method()"
@@ -32,4 +33,6 @@ app.use(cors()); // Using Cors middleware to allow cross-origin resource sharing
 app.use(express.json()); // Using the express.json() middleware to parse incoming JSON data
 app.use(UserRoute); // Mounting the UserRoute on the app 1.schema, 2. controller, 3 routes, 4 index
 //listen for requests
-app.listen(5000, () => console.log("Listening on port 5000")); // Starting the server on port 5000 and logging a message to the console when the server starts
+app.listen(process.env.PORT || 5000, () =>
+  console.log("Listening on port 5000")
+); // Starting the server on port 5000 and logging a message to the console when the server starts
