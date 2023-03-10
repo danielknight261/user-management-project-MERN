@@ -30,7 +30,19 @@ const UserList = () => {
 
   return (
     <>
+    {/* Header */}
       <header className="header">MERN User Management Project</header>
+    {/* Search Function */}
+    <div>
+      <input>
+        type="search"
+        placeholder="Search"
+        name="searchTerm"
+      </input>
+    </div>
+
+
+    {/* Table of Contents */}
       <div className="container">
         <div>
           <Link to="add" className="button">
