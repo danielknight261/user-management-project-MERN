@@ -2,6 +2,8 @@
 
 MERN User Management Project
 
+Live Project Link - 
+
 This project was developed using the MERN stack. The backend was created using Mongoose, MongoDB, Node, Express, and Cors, while the frontend was developed using React, Axios, and a little bit of vanilla CSS. The MongoDB database uses a global IP address and does not require an .env file, so the project can be run by anyone by following the steps below.
 
 ## Deployment

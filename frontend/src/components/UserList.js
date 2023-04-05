@@ -15,10 +15,14 @@ const UserList = () => {
     try {
       let response;
       if (idToDelete) {
-        await axios.delete(`https://mern---backend.herokuapp.com/${idToDelete}`);
+        await axios.delete(
+          `https://mern---backend.herokuapp.com/${idToDelete}`
+        );
         setUsers(users.filter((user) => user._id !== idToDelete));
       } else {
-        response = await axios.get("https://mern---backend.herokuapp.com/users");
+        response = await axios.get(
+          "https://mern---backend.herokuapp.com/users"
+        );
         setUsers(response.data);
       }
     } catch (error) {
@@ -30,24 +34,16 @@ const UserList = () => {
 
   return (
     <>
-    {/* Header */}
       <header className="header">MERN User Management Project</header>
-    {/* Search Function */}
-    <div>
-      <input>
-        type="search"
-        placeholder="Search"
-        name="searchTerm"
-      </input>
-    </div>
-
-
-    {/* Table of Contents */}
       <div className="container">
         <div>
-          <Link to="add" className="button">
-            Add New
-          </Link>
+          <div className="containerTwo">
+            <Link to="add" className="button">
+              Add New
+            </Link>
+            <input className="input" type="search"></input>
+          </div>
+
           <table className="table">
             <thead>
               <tr className="border-container">

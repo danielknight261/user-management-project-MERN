@@ -80,3 +80,8 @@ header {
   box-sizing: border-box; /* Includes padding and border in the element's total width and height */
   border-radius: 8px
 }
+.containerTwo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
